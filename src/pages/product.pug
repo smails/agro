@@ -1,0 +1,23 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('2,4-Дактив, КЭ')
+  body.page
+    +header('header__top_page')
+    +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+      +e.inner.inner
+        - var active = '2,4-Дактив, КЭ'
+        each link, index in ["Главная", "Каталог", "Пестициды", '2,4-Дактив, КЭ']
+          if link == active
+            +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+              +e.SPAN.text(itemprop='item', title=link , href="#")
+                span(itemprop='name')=link
+                meta(itemprop='position', content=index)
+          else
+            +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+              +e.A.text(itemprop='item', title=link , href="#")
+                span(itemprop='name')=link
+                meta(itemprop='position', content=index)
+    +product()
+    +footer()
+    include ../static/pug/_scripts

@@ -1,0 +1,167 @@
+mixin product(vars)
+  +b.content
+    +e.inner.inner
+      +e.H1.title 2,4-Дактив, КЭ
+      +b.product-page
+        +e.main
+          +e.content
+            +e.wrap
+              +e.figure
+                +e.picture
+                  +e.IMG.pic(src='/images/product.jpg' alt='')
+                  +e.top лидер продаж
+              +e.info
+                +e.col-left
+                  +e.like
+                    span В избранное
+                  +e.prices
+                    +e.P.price-old 6 506 ₽
+                    +e.P.price-new 6 506 ₽
+                  +b.counter
+                    +e.btn_minus
+                    +e.INPUT.field(type="number" min="1" max="99" value="1")
+                    +e.btn_plus
+                  +e.BUTTON.btn.btn В корзину
+                +e.col-right
+                  +e.hold
+                    +e.box
+                      +e.P.caption Наличие
+                      +e.P.val На складе
+                    +e.box
+                      +e.P.caption Цена за литр
+                      +e.P.val 650 ₽
+                  +e.BUTTON.buy.btn_gray.js-open-buy Купить
+            +e.desc
+              p Высокоэффективный системный послевсходовый гербицид для борьбы с однолетними и некоторыми ноголетними двудольными сорняками в посевах зерновых колосовых культур. Высокоэффективный системный послевсходовый гербицид для борьбы.
+            +b.vnt-big
+              +e.inner
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-1.svg' alt='')
+                  +e.P.title Сертификаты
+                    br
+                    | на продукцияю
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-2.svg' alt='')
+                  +e.P.title Гибкие цены
+                    br
+                    | на всё
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-3.svg' alt='')
+                  +e.P.title Доставка 
+                    br
+                    | по всей России
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-4.svg' alt='')
+                  +e.P.title Напрямую
+                    br
+                    | от производителя
+            +e.char
+              +e.P.char-title Технические характеристики
+              +e.item
+                +e.name
+                  span Состав
+                +e.prop 564 г/л 2,4-Д (2-этилгексиловый эфир)
+          +e.tabs
+            +e.tab-head
+              +e.BUTTON.tab-btn.active Преимущества
+              +e.BUTTON.tab-btn Механизм действия 
+              +e.BUTTON.tab-btn Скорость действия
+              +e.BUTTON.tab-btn Норма расхода и применение
+            +e.tab-container
+              +e.tab-content.active
+                ul
+                  li • Селективный гербицид, который имеет широкий температурный диапазон применения от +5 °С (сравнительно с другими препаратами на основе 2,4-Д, которые работают от +10 °С).
+                  li • В сравнении с аминными солями обеспечивает максимальный эффект при более низких нормах расхода 2,4-Д кислоты (в 1,7-2,0 раза).
+                  li • Незаменимый в регионах с низким количеством осадков, поскольку 2,4-Дактив особенно быстро проявляет свое действие в условиях недостаточного количества влаги.
+              +e.tab-content
+                ul
+                  li • Селективный гербицид, который имеет широкий температурный диапазон применения от +5 °С (сравнительно с другими препаратами на основе 2,4-Д, которые работают от +10 °С).
+                  li • В сравнении с аминными солями обеспечивает максимальный эффект при более низких нормах расхода 2,4-Д кислоты (в 1,7-2,0 раза).
+                  li • Незаменимый в регионах с низким количеством осадков, поскольку 2,4-Дактив особенно быстро проявляет свое действие в условиях недостаточного количества влаги.
+          +e.sidebar
+            +e.P.holder.heading-3 Аналогичные товары
+            +b.product-min
+              +e.A.figure(href="#")
+                +e.picture
+                  +e.IMG.pic(src='/images/product.jpg' alt='')
+                  +e.top лидер продаж
+                +e.content
+                  +e.P.price 6 506 ₽
+                  +e.P.text Высокоэффективный системный послевсходовый гербицид...
+              +e.bottom
+                +e.A.title(href='#') KAS многофункционал Адъювант, СК
+    +b.similar
+      +e.inner.inner
+        +e.head
+          +e.H2.title С этим товаром покупают
+          +e.control
+            +e.btn-control_prev
+              svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 52')
+                path(d='M27.14 1.5 3 25.57 28 50.5' stroke='#fff' stroke-width='3')
+            +e.btn-control_next
+              svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 52')
+                path(d='M2.86 1.5 27 25.57 2 50.5' stroke='#fff' stroke-width='3')
+        +e.slider.swiper-container
+          .swiper-wrapper
+            +e.slide.swiper-slide
+              +b.product-min
+                +e.figure
+                  +e.picture
+                    +e.IMG.pic(src='/images/product.jpg' alt='')
+                    +e.top лидер продаж
+                  +e.content
+                    +e.P.price 6 506 ₽
+                    +e.P.text Высокоэффективный системный послевсходовый гербицид...
+                +e.bottom
+                  +e.P.title KAS многофункционал Адъювант, СК
+            +e.slide.swiper-slide
+              +b.product-min
+                +e.figure
+                  +e.picture
+                    +e.IMG.pic(src='/images/product.jpg' alt='')
+                    +e.top лидер продаж
+                  +e.content
+                    +e.P.price 6 506 ₽
+                    +e.P.text Высокоэффективный системный послевсходовый гербицид...
+                +e.bottom
+                  +e.P.title KAS многофункционал Адъювант, СК
+            +e.slide.swiper-slide
+              +b.product-min
+                +e.figure
+                  +e.picture
+                    +e.IMG.pic(src='/images/product.jpg' alt='')
+                    +e.top лидер продаж
+                  +e.content
+                    +e.P.price 6 506 ₽
+                    +e.P.text Высокоэффективный системный послевсходовый гербицид...
+                +e.bottom
+                  +e.P.title KAS многофункционал Адъювант, СК
+            +e.slide.swiper-slide
+              +b.product-min
+                +e.figure
+                  +e.picture
+                    +e.IMG.pic(src='/images/product.jpg' alt='')
+                    +e.top лидер продаж
+                  +e.content
+                    +e.P.price 6 506 ₽
+                    +e.P.text Высокоэффективный системный послевсходовый гербицид...
+                +e.bottom
+                  +e.P.title KAS многофункционал Адъювант, СК
+    +b.callback_2._mod
+      +e.inner.inner
+        +e.H2.title Необходима
+          br
+          | помощь в выборе?
+        +e.P.subtitle Перезвоним в течение 5 минут и ответим на все
+          br
+          | вопросы по телефону. Просто оставьте заявку.
+        +e.info
+          +e.contacts
+            +e.P.cnt-title Имя
+            +e.P.cnt Владислав
+          +e.contacts
+            +e.P.cnt-title Телефон
+            +e.A.cnt(href="tel:+7 (495) 556-22-32") +7 (495) 556-22-32
+          +e.BUTTON.btn.btn Оставить заявку
+        +e.P.sign Оставляя заявку, Вы соглашаетесь с 
+          a(href="#")   политикой конфиденциальности

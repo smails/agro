@@ -1,0 +1,157 @@
+mixin catalog(state)
+  if state == 'index'
+    +b.catalog-nav
+      +e.inner.inner
+        +e.head
+          +e.H2.title Каталог товаров
+        +e.container
+          +e.box(style="background-image: url(../images/cat-1.png)")
+            +e.H3.caption Пестициды
+            +e.list
+              +e.item
+                +e.A.link(href="#") Гербициды
+              +e.item
+                +e.A.link(href="#") Акарициды
+              +e.item
+                +e.A.link(href="#") Антидот
+              +e.item
+                +e.A.link(href="#") Дезинсекция
+              +e.item
+                +e.A.link(href="#") Десиканты
+          +e.box(style="background-image: url(../images/cat-2.png)")
+            +e.H3.caption Удобрения
+            +e.list
+              +e.item
+                +e.A.link(href="#") Комплексные
+              +e.item
+                +e.A.link(href="#") Фосфорные
+              +e.item
+                +e.A.link(href="#") Жидкие
+              +e.item
+                +e.A.link(href="#") Азотные
+              +e.item
+                +e.A.link(href="#") Азотно-фосфорные
+          +e.box(style="background-image: url(../images/cat-3.png)")
+            +e.H3.caption Биопрепараты
+            +e.list
+              +e.item
+                +e.A.link(href="#") Биоудобрение
+              +e.item
+                +e.A.link(href="#") Бактерициды
+              +e.item
+                +e.A.link(href="#") Биофунгициды
+              +e.item
+                +e.A.link(href="#") Биоинсектициды
+          +e.box(style="background-image: url(../images/cat-4.png)")
+            +e.H3.caption Препараты для ЛПХ
+            +e.list
+              +e.item
+                +e.A.link(href="#") Гербициды
+              +e.item
+                +e.A.link(href="#") Фосфорные
+              +e.item
+                +e.A.link(href="#") Жидкие
+              +e.item
+                +e.A.link(href="#") Азотные
+              +e.item
+                +e.A.link(href="#") Азотно-фосфорные
+          +e.box_full(style="background-image: url(../images/cat-5.png)")
+            +e.H3.caption Вспомогательные препараты
+            +e.list_two
+              +e.item
+                +e.A.link(href="#") Адъюванты
+              +e.item
+                +e.A.link(href="#") Дезинфиканты
+              +e.item
+                +e.A.link(href="#") Клей
+              +e.item
+                +e.A.link(href="#") Прилипатели
+              +e.item
+                +e.A.link(href="#") Препараты от солнечных лучей и заморозков
+              +e.item
+                +e.A.link(href="#") Пав
+              +e.item
+                +e.A.link(href="#") Средства для с/х машин
+  if state == 'catalog'
+    +b.content
+      +e.inner.inner
+        +e.H1.title Вспомогательные препараты
+        +b.catalog-list
+          +e.left
+            +b.filter
+              +e.title Показан 
+                span 221
+                | товар
+              +e.container
+                +e.head
+                  span Тип
+                  svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 10')
+                    path(d='m1 1.26 7.37 7.4L16 1' stroke='#BCBCBC')
+                +e.body
+            +b.consult
+              +e.P.title.heading-2 Бесплатная консультация агронома
+              +e.P.subtitle Наш специалист бесплатно проконсультирует, что выбрать конкретно под ваши цели
+              +e.phone-container
+                +e.IMG.pic(src='/images/consult-1.png' alt='')
+                +e.contacts
+                  +e.P.cnt-title Телефон
+                  +e.A.cnt(href="tel:") +7 (495) 556-22-32
+              +e.control
+                +e.P.sign Оставляя заявку, Вы соглашаетесь с 
+                  a(href="#")  политикой конфиденциальности
+                +e.BUTTON.btn.btn.js-open-modal Заказать замер
+          +e.right
+            +b.vnt-big
+              +e.inner
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-1.svg' alt='')
+                  +e.P.title Сертификаты
+                    br
+                    | на продукцияю
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-2.svg' alt='')
+                  +e.P.title Гибкие цены
+                    br
+                    | на всё
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-3.svg' alt='')
+                  +e.P.title Доставка 
+                    br
+                    | по всей России
+                +e.item
+                  +e.IMG.pic(src='/icon/icon-vnt-4.svg' alt='')
+                  +e.P.title Напрямую
+                    br
+                    | от производителя
+            +e.items
+              +b.product
+                +e.figure
+                  +e.picture
+                    +e.IMG.pic(src='/images/product.jpg' alt='')
+                    +e.top лидер продаж
+                  +e.P.text KAS Адъювант - многофункциональный адъювант (органосиликоновый суперсмачиватель, ПАВ) для обработки сельскохозяйственных и декоративных культур, применяется совместно с пестицидами и микроудобрениями, повышая их хозяйственную и биологическую эффективность. KAS Адъювант - многофункциональный адъювант (органо-силиконовый суперсмачиватель, ПАВ)\
+                +e.info
+                  +e.item
+                    +e.P.caption Производитель
+                    +e.P.val BAYER
+                  +e.item
+                    +e.P.caption Фасовка
+                    +e.P.val 10 л
+                  +e.item
+                    +e.P.caption Цена за литр
+                    +e.P.val 650 ₽
+                  +e.item
+                    +e.P.caption Наличие
+                    +e.P.val На складе
+                +e.main
+                  +e.content
+                    +e.P.title KAS многофункционал Адъювант, СК
+                    +e.control
+                      +e.prices
+                        +e.P.price-new 6 506 ₽
+                        +e.P.price-old 6 506 ₽
+                      +b.counter
+                        +e.btn_minus
+                        +e.INPUT.field(type="number" min="1" max="99" value="1")
+                        +e.btn_plus
+                  +e.BUTTON.btn.btn В корзину

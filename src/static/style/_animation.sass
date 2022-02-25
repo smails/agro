@@ -1,0 +1,29 @@
+.slide-left
+  transform: translateX(-100%)
+  opacity: 0
+  transition: opacity .5s cubic-bezier(.32, 0, .67, 0),transform .5s cubic-bezier(.32, 0, .67, 0)
+  +screen('max', 575)
+    transform: translateX(0%)
+    opacity: 1
+.slide-right
+  transform: translateX(100%)
+  opacity: 0
+  transition: opacity .5s cubic-bezier(.32, 0, .67, 0),transform .5s cubic-bezier(.32, 0, .67, 0)
+  +screen('max', 575)
+    transform: translateX(0%)
+    opacity: 1
+
+.tr
+  transition: 1s linear, opacity .5s linear
+  &_1
+    transition-delay: .3s
+  &_2
+    transition-delay: .7s
+  &_3
+    transition-delay: 1.1s
+  &.hidden
+    transform: translateX(-40px)
+    opacity: 0
+    +screen('max', 575)
+      transform: none
+      opacity: 1

@@ -1,0 +1,23 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('Вспомогательные препараты')
+  body.page
+    +header('header__top_page')
+    +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+      +e.inner.inner
+        - var active = 'Пестициды'
+        each link, index in ["Главная", "Каталог", "Пестициды"]
+          if link == active
+            +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+              +e.SPAN.text(itemprop='item', title=link , href="#")
+                span(itemprop='name')=link
+                meta(itemprop='position', content=index)
+          else
+            +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+              +e.A.text(itemprop='item', title=link , href="#")
+                span(itemprop='name')=link
+                meta(itemprop='position', content=index)
+    +catalog('catalog')
+    +footer()
+    include ../static/pug/_scripts

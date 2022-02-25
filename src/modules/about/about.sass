@@ -1,0 +1,57 @@
+.about-page
+  overflow-x: hidden
+  .overlay
+    +screen('max', 1280)
+      height: max-content
+.about
+  padding-top: 6rem
+  position: relative
+  z-index: 3
+  padding-bottom: 14rem
+  overflow: hidden
+  box-sizing: border-box
+  +screen('max', 1280)
+    padding-bottom: 0
+  &__title
+    position: relative
+    +fs(25px)
+    font-weight: 900
+    padding-left: 2rem
+    box-sizing: border-box
+    margin-bottom: 4rem
+    &:before
+      content: ''
+      height: 26px
+      width: 6px
+      display: block
+      position: absolute
+      top: 3px
+      left: 0
+      background: $c2
+      transition: .5s linear
+      clip-path: polygon(0 0, 100% 10px, 100% 100%, 0 calc(100% - 10px))
+  &__list
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr 1fr
+    +screen('max', 1280)
+      grid-template-columns: 1fr 1fr 1fr
+    +screen('max', 1023)
+      grid-template-columns: 1fr 1fr
+    +screen('max', 575)
+      display: block
+  &__item
+    padding-bottom: 9rem
+    max-width: 350px
+    position: relative
+    z-index: 2
+    +screen('max', 1023)
+      padding-bottom: 5rem
+      margin-right: 2rem
+    +screen('max', 575)
+      padding-bottom: 3rem
+  &__pic
+    vertical-align: middle
+    margin-bottom: 2rem
+  .shadow
+    right: -200px
+    bottom: -200px

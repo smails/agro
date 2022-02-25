@@ -1,0 +1,50 @@
+h1, .heading-1
+  font-weight: 800
+  +fs(40px)
+  line-height: 1.4
+h2, .heading-2
+  font-weight: 700
+  +fs(37px)
+  line-height: 1.1
+h3, .heading-3
+  font-weight: 700
+  +fs(23px)
+  line-height: 1.5
+h4, .heading-4
+  font-weight: 700
+  +fs(20px)
+  line-height: 1.5
+
+
+.text
+  p
+    margin-bottom: 2rem
+    &:last-of-type
+      margin-bottom: 0
+  ul
+    li
+      position: relative
+      margin-bottom: 1rem
+      padding-left: 30px
+      font-weight: 700
+      color: inherit
+      line-height: 1
+      &:before
+        content: ''
+        width: 18px
+        height: 12px
+        background-image: url(../icon/icon-check.svg)
+        background-repeat: no-repeat
+        background-position: center
+        position: absolute
+        background-size: contain
+        top: 0
+        left: 0
+.text-uppercase
+  text-transform: uppercase
+.text-right
+  text-align: right
+.text-center
+  text-align: center
+.text-underline
+  text-decoration: underline

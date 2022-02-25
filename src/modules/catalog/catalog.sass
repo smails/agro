@@ -1,0 +1,265 @@
+.catalog-nav
+  background: url(../icon/bg-1.svg)
+  &__inner
+    margin-top: -105px
+    background: #FFFFFF
+    box-shadow: 0px 34px 54px rgba(0, 0, 0, 0.09)
+    border-radius: 10px
+    padding: 0
+    max-width: 1200px
+    position: relative
+    z-index: 9
+  &__head
+    padding: 4rem
+    box-sizing: border-box
+    border-top-left-radius: 10px
+    border-top-right-radius: 10px
+    border-bottom: 1px solid #EFF1E4
+  &__title
+    position: relative
+    padding-left: 50px
+    box-sizing: border-box
+    &:before
+      content: ''
+      width: 26px
+      height: 26px
+      display: block
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      background-image: url(../icon/icon-ctl.svg)
+      background-repeat: no-repeat
+      background-position: center
+  &__container
+    display: flex
+    flex-wrap: wrap
+  &__list
+    max-width: 385px
+    &_two
+      column-count: 2
+  &__box
+    width: 50%
+    box-sizing: border-box
+    border-bottom: 1px solid #EFF1E4
+    border-right: 1px solid #EFF1E4
+    padding: 3rem 4rem
+    transition: .5s ease
+    background-repeat: no-repeat
+    background-position: right bottom
+    &:nth-of-type(2n)
+      border-right: 0
+    &:hover
+      box-shadow: 10px 14px 44px rgba(29, 185, 147, 0.1)
+    &_full
+      flex-grow: 1
+      border-bottom: 0
+      border-right: 0
+  &__item
+    margin-bottom: 1.1rem
+  &__caption
+    margin-bottom: 1.5rem
+  &__link
+    +fs(14px)
+    font-weight: 700
+    color: $c3
+
+
+.catalog-list
+  display: flex
+  justify-content: space-between
+  padding-bottom: 10rem
+  &__left
+    max-width: 382px
+    width: 35%
+    margin-right: 3rem
+  &__right
+    max-width: 790px
+    width: 65%
+    flex-shrink: 0
+  .vnt-big
+    margin-bottom: 3rem
+  .product
+    margin-bottom: 3rem
+
+
+.filter
+  background: #F2F2F2
+  border-radius: 10px
+  width: 100%
+  &__title
+    padding: 2.7rem 1rem
+    box-sizing: border-box
+    display: flex
+    justify-content: center
+    align-items: center
+    border-bottom: 1px solid #fff
+    font-weight: 700
+    +fs(20px)
+    span
+      display: inline-block
+      padding: 0 5px
+  &__container
+    border-bottom: 1px solid #fff
+    box-sizing: border-box
+    padding: 1rem 3rem
+  &__head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    +fs(11px)
+    line-height: 1
+    font-weight: 400
+    svg
+      width: 17px
+  &__check
+    margin-top: 2rem
+    padding-left: 3rem
+    box-sizing: border-box
+    label
+      display: block
+      cursor: pointer
+      margin-bottom: 1rem
+      height: 21px
+    input
+      display: none
+      &:checked + span:after
+        opacity: 1
+      &.error + span:before
+        border: 1px solid #ff4657
+    span
+      +fs(14px)
+      padding-left: 30px
+      position: relative
+      +screen('max', 575)
+        +fs(18px)
+        vertical-align: middle
+      &::before
+        content: ''
+        width: 21px
+        height: 21px
+        border-radius: 5px
+        border: 1px solid #BCBCBC
+        background-color: #ffffff
+        position: absolute
+        left: 0
+        top: -2px
+        vertical-align: middle
+        box-sizing: border-box
+      &:hover
+        &::after
+          opacity: 1
+      &:after
+        content: ''
+        width: 21px
+        height: 21px
+        background-image: url(../icon/icon-check-greena.svg)
+        background-position: center
+        background-repeat: no-repeat
+        background-size: 100%
+        position: absolute
+        left: 0px
+        top: -2px
+        opacity: 0
+  &__slider
+    margin-top: 2rem
+    padding: 0 3rem
+    box-sizing: border-box
+    .ui-slider-horizontal
+      height: 3px
+      background: #BCBCBC
+      border: 0
+      border-radius: 0
+    .ui-widget-header
+      background: $c3
+    .ui-slider-handle.ui-state-default
+      width: 21px
+      height: 21px
+      border: 0
+      border-radius: 100%
+      background: $c3
+      top: 50%
+      transform: translateY(-50%)
+    .ui-widget.ui-widget-content
+      border: 0
+      margin-bottom: 2rem!important
+      margin-top: 2rem
+    .mse2_number_inputs
+      display: flex
+      justify-content: space-between
+      input
+        background: none
+        font-weight: 700
+        font-size: 14px
+        color: #000
+        width: 80px
+      label
+        position: relative
+        &:first-child
+          left: -15px
+        &:last-of-type
+          right: -25px
+          input
+            text-align: right
+.consult
+  margin-top: 6rem
+  &__subtitle
+    margin: 2rem 0
+  &__phone-container
+    position: relative
+  &__contacts
+    background: #FFFFFF
+    box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.15)
+    border-radius: 10px
+    right: 0
+    top: 0
+    width: 75%
+    padding-top: 40px
+    padding-left: 45px
+    position: absolute
+    height: 100%
+    box-sizing: border-box
+    max-width: 280px
+  &__cnt-title
+    font-weight: 400
+    +fs(12px)
+    margin-bottom: 1rem
+  &__cnt
+    color: #464646
+    font-weight: 600
+    +fs(22px)
+  &__pic
+    border-radius: 100%
+    width: 126px
+    display: block
+    box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.15)
+    position: relative
+    z-index: 9
+  &__control
+    display: flex
+    align-items: center
+    margin-top: 2rem
+  &__sign
+    font-weight: 600
+    font-size: 12px
+    margin-right: 2rem
+    a
+      border-bottom: 1px solid #000
+  &__btn
+    flex-shrink: 0
+    max-width: 215px
+
+
+.vnt-big
+  &__inner
+    display: flex
+    justify-content: space-between
+  &__pic
+    margin-bottom: 1.5rem
+    height: 41px
+    width: 40px
+    object-fit: contain
+  &__title
+    font-weight: 700
+    line-height: 1.2
+

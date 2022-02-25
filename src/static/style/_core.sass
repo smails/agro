@@ -1,0 +1,84 @@
+*::-webkit-scrollbar
+  width: 5px
+  height: 3px
+  background: #071320
+*::-webkit-scrollbar-track
+  background-color: transparent
+*::-webkit-scrollbar-track-piece
+  background-color: transparent
+*::-webkit-scrollbar-thumb
+  height: 50px
+  background-color: rgba(255, 255, 255, 0.1)
+  border-radius: 3px
+*::-webkit-scrollbar-corner
+  background-color: #fff
+*::-webkit-resizer
+  background-color: rgba(255, 255, 255, 0.1)
+html
+  font-size: 10px
+  +screen('max', 1023)
+    font-size: 8px
+  +screen('max', 575)
+    font-size: 5px
+body
+  font-size: 16px
+  font-weight: 500
+  line-height: 1.25
+  font-family: $ff1
+  color: $c1
+  scroll-behavior: smooth
+  +screen('max', 575)
+    font-size: 14px
+
+.inner
+  max-width: 1280px
+  width: 100%
+  margin: 0 auto
+  box-sizing: border-box
+  padding: 0 4rem
+
+.page
+  padding-top: 20rem
+
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 99
+  background: rgba(0, 0, 0, 0.9)
+  display: none
+
+
+.breadcrumb
+  margin-bottom: 2rem
+  &__inner
+    padding: 0 7rem
+    box-sizing: border-box
+  &__text
+    font-size: 11px
+    font-weight: 600
+    color: #BCBCBC
+  &__link
+    position: relative
+    margin-right: 15px
+    display: inline-block
+    padding-right: 15px
+    &::before
+      content: '/'
+      font-size: 11px
+      position: absolute
+      top: 50%
+      right: 0
+      color: #BCBCBC
+      transform: translateY(-30%)
+      line-height: 1
+
+.content
+  &_mb-10
+    padding-bottom: 10rem
+  &__title
+    padding: 0 6rem
+    box-sizing: border-box
+    margin-bottom: 4rem

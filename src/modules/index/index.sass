@@ -1,0 +1,207 @@
+.callback
+  background-repeat: no-repeat
+  background-position: bottom left
+  padding-bottom: 8rem
+  box-sizing: border-box
+  z-index: 3
+  position: relative
+  &_mod
+    padding-top: 8rem
+  &_1
+    padding-top: 35rem
+    background-image: url(../images/callback-1.png)
+    margin-top: -26.5rem
+  &_2
+    background-image: url(../images/callback-2.png)
+  &__title
+    max-width: 500px
+    margin-bottom: 2rem
+  &__subtitle
+    margin-bottom: 3rem
+  &__info
+    background: #FFFFFF
+    box-shadow: 0px 24px 44px rgba(0, 0, 0, 0.15)
+    border-radius: 10px
+    box-sizing: border-box
+    padding: 2.7rem 4rem
+    display: inline-flex
+    align-items: center
+  &__contacts
+    margin-right: 5rem
+  &__cnt-title
+    font-weight: 400
+    +fs(12px)
+    margin-bottom: 1rem
+  &__cnt
+    color: #464646
+    font-weight: 600
+    +fs(22px)
+  &__sign
+    padding-left: 4rem
+    margin-top: 1.5rem
+    +fs(12px)
+    font-weight: 600
+    color: #fff
+    a
+      display: inline-block
+      border-bottom: 1px solid #fff
+      color: #fff
+
+.vnt
+  padding: 6.5rem 0 13rem
+  background: #F2F2F2
+  &__title
+    max-width: 500px
+    position: relative
+    z-index: 2
+  &__wrap
+    display: flex
+    justify-content: center
+    margin-top: 5.5rem
+    justify-content: flex-end
+    position: relative
+    &::before
+      content: ''
+      width: 156px
+      height: 34px
+      background-image: url(../icon/icon-arrrow-right.svg)
+      background-repeat: no-repeat
+      background-size: contain
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+    &:after
+      content: ''
+      width: 244px
+      height: 244px
+      background: #fff
+      position: absolute
+      left: 50px
+      top: 50%
+      transform: translateY(-50%)
+      border-radius: 100%
+  &__content
+    font-weight: 700
+    +fs(23px)
+    line-height: 1.5
+    margin-right: 4rem
+    max-width: 480px
+    position: relative
+    z-index: 3
+  &__sign
+    line-height: 1.5
+    max-width: 480px
+
+.brands
+  padding: 5rem 0 4rem
+  background: url(../icon/bg-1.svg)
+  background-position: center
+  &__title
+    max-width: 500px
+    margin-bottom: 5rem
+  &__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  &__item
+    width: calc(100% / 7)
+    margin-bottom: 4rem
+    display: flex
+    justify-content: center
+    align-items: center
+  &__icon
+    width: 105px
+    height: 65px
+    object-fit: contain
+
+.reviews
+  background: $c3
+  padding: 7rem 0
+  color: #fff
+  &__title
+    margin-bottom: 3.5rem
+  &__sign
+    font-weight: 600
+    margin-bottom: 20px
+    max-width: 700px
+  &__text
+    +fs(24px)
+    line-height: 1.8
+    max-width: 840px
+  &__figure
+    display: flex
+    align-items: center
+    margin-top: 4rem
+  &__pic
+    vertical-align: middle
+    border-radius: 100%
+  &__cnt
+    margin-left: 3rem
+  &__name
+    font-weight: 700
+    +fs(19px)
+    margin-bottom: 0.5rem
+  &__control
+    position: absolute
+    right: 0
+    bottom: 0
+    display: flex
+    z-index: 9
+  &__btn-control
+    cursor: pointer
+    &_next
+      margin-left: 4rem
+    svg
+      width: 25px
+
+.personal
+  padding: 6.5rem 0 4rem
+  background: url(../images/bg-2.png) #F2F2F2
+  background-position: center
+  &__head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 5rem
+  &__title
+    color: #464646
+  &__control
+    display: flex
+  &__slider
+    position: relative
+    z-index: 9
+  &__btn-control
+    cursor: pointer
+    &_next
+      margin-left: 4rem
+    svg
+      width: 25px
+  &__slide
+    background: #FFFFFF
+    border-radius: 30px
+    box-sizing: border-box
+    max-width: 382px
+    text-align: center
+  &__name
+    font-weight: 700
+    +fs(20px)
+    color: $c3
+    margin-top: 4rem
+    margin-bottom: 0.5rem
+  &__pos
+    font-weight: 400
+    font-size: 11px
+    margin-bottom: 0.5rem
+  &__phone
+    font-weight: 700
+    +fs(18px)
+  &__pic
+    width: 100%
+    vertical-align: middle
+    height: 366px
+    object-fit: contain
+    margin-top: 3rem
+  & + .callback_2
+    padding-top: 20rem
+    margin-top: -9rem

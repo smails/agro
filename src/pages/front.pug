@@ -1,0 +1,11 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('Главная')
+  body.index
+    +header()
+    +banner()
+    +catalog('index')
+    +index()
+    +footer()
+    include ../static/pug/_scripts

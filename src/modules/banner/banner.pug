@@ -1,0 +1,31 @@
+mixin banner()
+  +b.banner
+    +e.prlx
+      +e.IMG.bg(src='/images/ground.png' alt='')
+      +e.IMG.bg-move(src='/images/back.png' alt='')
+      +e.IMG.tools(src='/images/tools.png' alt='')
+    +e.content
+      +e.inner.inner
+        +e.H1.title Средства защиты растений и удобрения для средних и больших хозяйств
+        +e.text.text
+          ul
+            li Доставка от 2-х дней по России
+            li Консультация опытного агронома
+            li Гибкая система оплаты
+        +e.A.btn.btn Смотреть каталог товаров
+        +e.vnt
+          +e.item
+            +e.IMG.pic(src='/icon/vnt-1.svg' alt='')
+            +e.P.caption Более
+              br
+              | 1000 товаров
+          +e.item
+            +e.IMG.pic(src='/icon/vnt-2.svg' alt='')
+            +e.P.caption 15 лет на
+              br
+              | рынке
+          +e.item
+            +e.IMG.pic(src='/icon/vnt-3.svg' alt='')
+            +e.P.caption 100% качество
+              br
+              | продукции
