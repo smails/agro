@@ -1,20 +1,39 @@
 .map
   border-radius: 0px 0px 30px 30px
+  +screen('max', 575)
+    height: 250px
   &__pic
     width: 100%
     vertical-align: middle
     border-radius: 0px 0px 30px 30px
+    +screen('max', 575)
+      height: 100%
+      object-fit: cover
+  #map
+    width: 100%
+    height: 100%
 .footer
   background: #3B4357
   padding: 8rem 0 4rem
   margin-top: -30px
+  +screen('max', 575)
+    padding-top: 14rem
   &__inner
     display: flex
     justify-content: space-between
     align-items: flex-start
+    position: relative
     // transform: scale(0)
     // opacity: 0
     // transition: .5s linear
+    +screen('max', 1023)
+      flex-wrap: wrap
+  &__pic
+    width: 180px
+    +screen('max', 1200)
+      width: 160px
+    +screen('max', 575)
+      width: 130px
   &__sign
     margin-top: 3.5rem
     font-size: 11px
@@ -35,9 +54,19 @@
   &__link
     font-weight: 700
     color: #fff
+    transition: .5s ease
+    &:hover
+      color: $c2
   &__nav
     display: flex
     align-items: flex-start
+    +screen('max', 1023)
+      width: 100%
+      order: -1
+      margin-bottom: 5rem
+      justify-content: space-between
+    +screen('max', 360)
+      display: block
   &__phone
     font-weight: 700
     +fs(23px)
@@ -60,13 +89,49 @@
       color: $c2
   &__col
     margin-right: 5rem
+    +screen('max', 360)
+      margin-right: 0
+      margin-bottom: 5rem
     &:last-of-type
       margin-right: 0
-
+      +screen('max', 1023)
+        margin-right: 5rem
+  &__info
+    +screen('max', 575)
+      order: 1
+      margin-top: 5rem
+  &__contacts
+    +screen('max', 1200)
+      display: none
+    +screen('max', 1023)
+      display: block
+    +screen('max', 575)
+      padding-top: 5rem
+  &__dev
+    position: absolute
+    right: 4rem
+    bottom: 0
+    display: flex
+    align-items: center
+    color: #fff
+    +fs(13px)
+    +screen('max', 575)
+      display: block
+      text-align: right
+    svg
+      margin-left: .3rem
+      +screen('max', 575)
+        margin-left: 0
+        margin-top: 0.5rem
 .social
   display: flex
   &__icon
     width: 34px
     vertical-align: middle
+    path
+      transition: .5s ease
   &__link
     padding-right: 1rem
+    &:hover
+      .hover
+        fill: $c2

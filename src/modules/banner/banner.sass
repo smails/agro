@@ -4,7 +4,9 @@
   &__prlx
     position: relative
     overflow: hidden
-    width: 100vw
+    width: calc(100vw - 5px)
+    +screen('max', 1280)
+      width: 100%
   &_bg
     vertical-align: middle
   &__bg-move
@@ -12,7 +14,6 @@
     vertical-align: middle
     top: 0
     left: 0
-    display: none
   &__tools
     position: absolute
     vertical-align: middle
@@ -22,9 +23,13 @@
     position: absolute
     bottom: 15rem
     width: 100%
+    +screen('max', 1023)
+      bottom: 5rem
   &__inner
     position: relative
     padding: 0 10rem
+    +screen('max', 1200)
+      padding: 0 4rem
   &__title
     max-width: 630px
     margin-bottom: 2rem
@@ -37,13 +42,26 @@
     position: absolute
     bottom: 0
     right: 10rem
+    +screen('max', 1023)
+      position: relative
+      right: 0
+      justify-content: flex-start
+      margin-top: 5rem
+    +screen('max', 575)
+      flex-wrap: wrap
   &__item
     display: flex
     align-items: center
     margin-left: 4rem
+    +screen('max', 1023)
+      margin-left: 0
+      margin-right: 4rem
+      margin-bottom: 5rem
   &__caption
     font-weight: 700
     line-height: 1.2
     margin-left: 1.4rem
+    +screen('max', 575)
+      +fs(14px)
   &__pic
     vertical-align: middle

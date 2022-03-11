@@ -1,0 +1,81 @@
+mixin buy(vars)
+  +b.content
+    +e.inner.inner
+      +e.H1.title Оформление заказа
+      +b.buy
+        +e.left
+          +e.control-top
+            +e.LABEL.check
+              +e.INPUT.check-hidden(type="checkbox")
+              +e.SPAN.check-text выбрать всё
+            +e.BUTTON.remove удалить выбранное
+          +e.list
+            +b.buy-item
+              +e.LABEL.check
+                +e.INPUT.check-hidden(type="checkbox")
+                +e.SPAN.check-text
+              +e.content
+                +e.picture
+                  +e.IMG.pic(src='/images/product.jpg' alt='')
+                +e.wrap
+                  +e.box
+                    +e.P.title KAS многофункционал Адъювант, СК
+                    +e.row
+                      +e.col
+                        +e.P.caption Осталось
+                        +e.P.val 3 шт
+                      +e.col
+                        +e.P.caption Цена
+                        +e.P.val 6 506 ₽
+                      +e.col
+                        +e.P.caption Количество
+                        +b.counter
+                          +e.btn_minus
+                          +e.INPUT.field(type="number" min="1" max="99" value="1")
+                          +e.btn_plus
+                      +e.col
+                        +e.P.caption Общий объём
+                        +e.P.val 30 л
+                  +e.prices
+                    +e.P.price-old 6 506 ₽
+                    +e.P.price-new 6 506 ₽
+        +e.right
+          +e.total
+            +e.P.sign Итого:
+              span *цена с НДС
+            +e.prices
+              +e.P.price-old 6 506 ₽
+              +e.P.price-new 6 506 ₽
+          +e.start.btn Начать оформление заказа
+      +b.FORM.order.hidden
+        +e.col
+          +e.P.title Контактные данные
+          +e.box
+            +e.LABEL.radio
+              +e.INPUT.radio-hidden(type="radio")
+              +e.SPAN.radio-text Физическое лицо
+            +e.LABEL.radio
+              +e.INPUT.radio-hidden(type="radio")
+              +e.SPAN.radio-text Юридическое лицо
+          +e.info
+            +e.group
+              +e.P.name Имя
+              +e.INPUT.field(type="text" placeholder="Ваше имя")
+            +e.group
+              +e.P.name Телефон
+              +e.INPUT.field(type="tel" placeholder="Ваш телефон")
+          +e.P.sign Необходим для обработки вопросов по Вашему заказу. По этому номеру телефона мы свяжемся с Вами для подтверждения заказа и согласования деталей доставки.
+          +e.info
+            +e.group
+              +e.P.name Город
+              +e.INPUT.field(type="text" placeholder="Город доставки")
+            +e.group
+              +e.P.name E-mail
+              +e.INPUT.field(type="text" placeholder="Ваша почта")
+          +e.P.sign На этот электронный адрес Вам будут приходить уведомления об изменении статуса заказа
+          +e.next.btn.disabled Далее
+        +e.col
+          +e.P.title Информация о доставке
+          +e.P.text Наша компания осуществляют доставку с помощью транспортной компании "Солнышко". У нас есть несколько складов по всей России, в зависимости от вашего местоположения мы отправляем к вам товар с ближайшего склада. Детали доставки вам расскажет менеджер после оформления заказа
+          +e.map
+          +e.BUTTON.submit.btn.disabled Оформить заказ

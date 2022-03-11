@@ -1,0 +1,421 @@
+.buy
+  display: flex
+  justify-content: space-between
+  margin-bottom: 7rem
+  +screen('max', 1200)
+    display: block
+  &__left
+    max-width: 760px
+    width: 65%
+    +screen('max', 1200)
+      width: 100%
+      max-width: 100%
+  &__right
+    max-width: 320px
+    width: 30%
+    +screen('max', 1200)
+      max-width: 100%
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: flex-end
+    +screen('max', 575)
+      display: block
+  &__check
+    box-sizing: border-box
+    display: block
+    cursor: pointer
+    margin-bottom: 1rem
+    height: 21px
+    input
+      display: none
+      &:checked + span:after
+        opacity: 1
+      &.error + span:before
+        border: 1px solid #ff4657
+    span
+      +fs(11px)
+      padding-left: 30px
+      position: relative
+      color: #00A3FF
+      text-decoration-line: underline
+      &::before
+        content: ''
+        width: 21px
+        height: 21px
+        border-radius: 5px
+        border: 1px solid #BCBCBC
+        background-color: #ffffff
+        position: absolute
+        left: 0
+        top: -2px
+        vertical-align: middle
+        box-sizing: border-box
+      &:hover
+        &::after
+          opacity: 1
+      &:after
+        content: ''
+        width: 21px
+        height: 21px
+        background-image: url(../icon/icon-check-greena.svg)
+        background-position: center
+        background-repeat: no-repeat
+        background-size: 100%
+        position: absolute
+        left: 0px
+        top: -2px
+        opacity: 0
+  &__control-top
+    display: flex
+    justify-content: space-between
+    margin-bottom: 1rem
+  &__remove
+    +fs(11px)
+    color: #00A3FF
+    text-decoration-line: underline
+  &__total
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    margin-bottom: 5rem
+    +screen('max', 1200)
+      margin-bottom: 0
+  &__prices
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: column
+  &__sign
+    font-weight: 700
+    +fs(23px)
+    line-height: 1
+    +screen('max', 1200)
+      margin-right: 3rem
+    span
+      font-size: 11px
+      display: block
+      font-weight: 300
+      margin-bottom: -1.5rem
+      margin-top: 0.5rem
+  &__price-new
+    font-weight: 700
+    +fs(37px)
+    color: $c3
+    line-height: 1
+  &__price-old
+    font-weight: 500
+    color: #F22A52
+    position: relative
+    margin-bottom: 0.5rem
+    &:before
+      content: ''
+      width: calc(100% + 10px)
+      height: 1px
+      background: #F22A52
+      position: absolute
+      left: -5px
+      top: 50%
+      z-index: 1
+      transform: translateY(-50%) rotate(-10deg)
+  &__start
+    +screen('max', 575)
+      margin-top: 5rem
+      width: 100%
+      box-sizing: border-box
+
+.buy-item
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 2.5rem
+  position: relative
+  &__check
+    margin-right: 1rem
+    width: 21px
+    display: block
+    cursor: pointer
+    height: 21px
+    input
+      display: none
+      &:checked + span:after
+        opacity: 1
+      &.error + span:before
+        border: 1px solid #ff4657
+    span
+      display: inline-block
+      width: 100%
+      height: 100%
+      position: relative
+      &::before
+        content: ''
+        width: 21px
+        height: 21px
+        border-radius: 5px
+        border: 1px solid #BCBCBC
+        background-color: #ffffff
+        position: absolute
+        left: 0
+        top: -2px
+        vertical-align: middle
+        box-sizing: border-box
+      &:hover
+        &::after
+          opacity: 1
+      &:after
+        content: ''
+        width: 21px
+        height: 21px
+        background-image: url(../icon/icon-check-greena.svg)
+        background-position: center
+        background-repeat: no-repeat
+        background-size: 100%
+        position: absolute
+        left: 0px
+        top: -2px
+        opacity: 0
+  &__content
+    display: flex
+    box-shadow: 0px 0px 54px rgba(0, 0, 0, 0.09)
+    border-radius: 10px
+    flex-shrink: 0
+    width: calc(100% - 31px)
+    +screen('max', 575)
+      display: block
+    &_full
+      width: 100%
+  &__wrap
+    display: flex
+    justify-content: space-between
+    flex-grow: 1
+    +screen('max', 1200)
+      width: 100%
+    +screen('max', 575)
+      width: auto
+  &__box
+    padding: 2.5rem 1.5rem
+    border-right: 1px solid #EFF1E4
+    flex-grow: 1
+    +screen('max', 1200)
+      width: 100%
+      box-sizing: border-box
+      border-top: 1px solid #EFF1E4
+      border-right: 0
+  &__picture
+    width: 190px
+    height: 100%
+    border-right: 1px solid #EFF1E4
+    +screen('max', 360)
+      width: 50%
+  &__pic
+    vertical-align: middle
+    object-fit: cover
+    width: 100%
+    height: 100%
+    border-radius: 10px 0 0px 10px
+  &__title
+    font-weight: 700
+    +fs(18px)
+    margin-bottom: 2rem
+  &__prices
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: column
+    padding: 2rem
+    box-sizing: border-box
+    width: 150px
+    flex-shrink: 0
+    +screen('max', 575)
+      position: absolute
+      top: 12%
+      right: 0
+      width: calc(100% - 222px)
+    +screen('max', 360)
+      width: calc(100% - 155px)
+      top: 5%
+    &_mobile
+      +screen('max', 575)
+        position: absolute
+        top: 15%
+        right: 0
+        width: calc(100% - 190px)
+      +screen('max', 360)
+        width: calc(100% - 140px)
+        top: 8%
+  &__price-new
+    font-weight: 700
+    +fs(23px)
+    color: $c3
+    line-height: 1
+  &__price-old
+    font-weight: 500
+    color: #F22A52
+    position: relative
+    margin-bottom: 0.5rem
+    &:before
+      content: ''
+      width: calc(100% + 10px)
+      height: 1px
+      background: #F22A52
+      position: absolute
+      left: -5px
+      top: 50%
+      z-index: 1
+      transform: translateY(-50%) rotate(-10deg)
+  &__row
+    display: flex
+    justify-content: space-between
+    +screen('max', 575)
+      flex-wrap: wrap
+  &__col
+    width: 24%
+    +screen('max', 575)
+      width: 50%
+      margin-bottom: 1rem
+  &__caption
+    font-weight: 400
+    font-weight: normal
+    margin-bottom: 1rem
+    font-size: 11px
+  &__val
+    font-weight: 700
+    font-size: 14px
+    color: $c3
+
+.order
+  margin-bottom: 7rem
+  position: relative
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  +screen('max', 1023)
+    display: block
+  &.hidden
+    &:before
+      content: ''
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      background: #fff
+      opacity: 0.7
+      display: block
+      z-index: 99
+  &__col
+    width: calc(50% - 12px)
+    +screen('max', 1023)
+      width: 100%
+  &__title
+    +fs(37px)
+    font-weight: 700
+    margin-bottom: 3rem
+  &__box
+    margin-bottom: 4rem
+    box-sizing: border-box
+    padding-left: 2rem
+  &__radio
+    box-sizing: border-box
+    display: block
+    cursor: pointer
+    margin-bottom: 1.5rem
+    height: 21px
+    input
+      display: none
+      &:checked + span:after
+        opacity: 1
+      &.error + span:before
+        border: 1px solid #ff4657
+    span
+      +fs(16px)
+      padding-left: 30px
+      position: relative
+      font-weight: 500
+      &::before
+        content: ''
+        width: 21px
+        height: 21px
+        border-radius: 100%
+        border: 1px solid #BCBCBC
+        background-color: #ffffff
+        position: absolute
+        left: 0
+        top: -2px
+        vertical-align: middle
+        box-sizing: border-box
+      &:hover
+        &::after
+          opacity: 1
+      &:after
+        content: ''
+        width: 9px
+        height: 9px
+        background: #009500
+        border-radius: 100%
+        position: absolute
+        left: 6px
+        top: 4px
+        opacity: 0
+        transition: .5s ease
+  &__info
+    background: #FFFFFF
+    box-shadow: 0px 24px 44px rgba(0, 0, 0, 0.15)
+    border-radius: 10px
+    padding: 3.5rem 4rem
+    display: grid
+    grid-template-columns: 1fr 1fr
+    +screen('max', 575)
+      display: block
+  &__group
+    +screen('max', 575)
+      margin-bottom: 3rem
+    &:last-of-type
+      margin-bottom: 0
+  &__name
+    font-weight: 400
+    +fs(12px)
+    margin-bottom: 1rem
+  &__field
+    color: #464646
+    font-weight: 600
+    +fs(22px)
+    border: 0
+    width: 95%
+    box-sizing: border-box
+    border-bottom: 1px solid transparent
+    &::placeholder
+      color: #464646
+    &.error
+      border-bottom-color: red
+  &__sign
+    margin-top: 1.5rem
+    padding: 0 2rem
+    font-weight: 600
+    +fs(12px)
+    line-height: 1.5
+    margin-bottom: 4rem
+  &__next
+    margin-right: 0
+    margin-left: auto
+    max-width: 135px
+    display: block
+    box-sizing: border-box
+  &__text
+    margin-bottom: 2rem
+    font-weight: 500
+    line-height: 1.5
+  &__map
+    width: 100%
+    height: 293px
+    margin-bottom: 9rem
+    box-shadow: 0px 24px 44px rgba(0, 0, 0, 0.15)
+    border-radius: 10px
+    +screen('max', 1200)
+      height: 243px
+  &__submit
+    margin-right: 0
+    margin-left: auto
+    max-width: 230px
+    display: block
+    box-sizing: border-box

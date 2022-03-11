@@ -27,6 +27,8 @@ body
   font-family: $ff1
   color: $c1
   scroll-behavior: smooth
+  +screen('max', 1023)
+    font-size: 15px
   +screen('max', 575)
     font-size: 14px
 
@@ -39,6 +41,10 @@ body
 
 .page
   padding-top: 20rem
+  +screen('max', 1023)
+    padding-top: 25rem
+  +screen('max', 575)
+    padding-top: 37rem
 
 .modal
   position: fixed
@@ -46,15 +52,74 @@ body
   left: 0
   width: 100%
   height: 100%
-  z-index: 99
-  background: rgba(0, 0, 0, 0.9)
+  z-index: 99999
+  background: rgba(0, 0, 0, 0.6)
   display: none
-
+  &__container
+    width: 96%
+    max-width: 500px
+    background: #fff
+    padding: 5rem
+    box-sizing: border-box
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  &__close
+    position: absolute
+    top: 20px
+    right: 20px
+    width: 20px
+    height: 20px
+    &::after,
+    &::before
+      content: ""
+      display: block
+      position: absolute
+      background: #000
+      width: 100%
+      height: 2px
+      transition: .5s ease
+      transform-origin: cetner
+    &::after
+      transform: rotate(45deg)
+    &::before
+      transform: rotate(-45deg)
+    &:hover
+      &::after,
+      &::before
+        background: $c3
+  &__title
+    font-weight: 700
+    text-align: center
+    +fs(25px)
+    margin-bottom: 5rem
+  &__group
+    width: 100%
+    margin-top: 2rem
+  &__name
+    font-weight: 400
+    +fs(12px)
+    margin-bottom: 1rem
+  &__field
+    color: #000
+    font-weight: 600
+    +fs(22px)
+    border: 0
+    width: 95%
+    box-sizing: border-box
+    border-bottom: 1px solid transparent
+    &::placeholder
+      color: #000
+    &.error
+      border-bottom-color: red
+  &__btn
+    width: 100%
+    margin-top: 3rem
 
 .breadcrumb
   margin-bottom: 2rem
   &__inner
-    padding: 0 7rem
     box-sizing: border-box
   &__text
     font-size: 11px
@@ -76,9 +141,77 @@ body
       line-height: 1
 
 .content
+  min-height: 400px
+  +screen('max', 575)
+    min-height: 300px
   &_mb-10
     padding-bottom: 10rem
   &__title
-    padding: 0 6rem
     box-sizing: border-box
     margin-bottom: 4rem
+  &__text
+    margin-bottom: 7rem
+
+.up
+  width: 50px
+  height: 50px
+  background: $c2
+  border-radius: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, .3)
+  position: fixed
+  bottom: 5rem
+  right: 5rem
+  z-index: 999
+  cursor: pointer
+  transition: .5s ease
+  opacity: 0
+  visibility: hidden
+  +screen('max', 1200)
+    bottom: 6.5rem
+    width: 40px
+    height: 40px
+  +screen('max', 1023)
+    bottom: 8rem
+  +screen('max', 575)
+    bottom: 13rem
+  &.open
+    opacity: 1
+    visibility: visible
+  &:hover
+    transform: translateY(10px)
+  svg
+    transform: rotate(90deg)
+    width: 20px
+
+.mse2-row
+  margin-bottom: 5rem
+  p
+    margin-top: 1rem
+.search-link
+  font-weight: 700
+  color: $c2
+  +fs(20px)
+  margin-bottom: 1rem
+
+.favorites-tabs
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  +screen('max', 575)
+    display: block
+  .product-min
+    margin: 0 .5rem 3rem
+    &__content
+      padding: 2.1rem 2rem
+
+.error-page
+  padding-bottom: 7rem
+  .heading-1
+    +fs(100px)
+  .heading-3
+    +fs(50px)
+    margin-bottom: 2rem
+    +screen('max', 575)
+      +fs(25px)

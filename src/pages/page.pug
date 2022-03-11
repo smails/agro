@@ -1,0 +1,84 @@
+include ../static/pug/global
+<!DOCTYPE html>
+html
+  +head('Сертификаты и новости')
+  body.page
+    +header('header__top_page')
+    +b.breadcrumb(itemscope="" itemtype="http://schema.org/BreadcrumbList")
+      +e.inner.inner
+        - var active = 'Корзина'
+        each link, index in ["Главная", "Корзина"]
+          if link == active
+            +e.SPAN.active(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+              +e.SPAN.text(itemprop='item', title=link , href="#")
+                span(itemprop='name')=link
+                meta(itemprop='position', content=index)
+          else
+            +e.SPAN.link(itemscope='', itemprop='itemListElement', itemtype='http://schema.org/ListItem')
+              +e.A.text(itemprop='item', title=link , href="#")
+                span(itemprop='name')=link
+                meta(itemprop='position', content=index)
+    +b.sertif
+      +e.inner.inner
+        +e.head
+          +e.H1.title Посмотрите наши сертификаты качества
+          +e.control
+            +e.btn-control_prev
+              svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 52')
+                path(d='M27.14 1.5 3 25.57 28 50.5' stroke='#009500' stroke-width='3')
+            +e.btn-control_next
+              svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 52')
+                path(d='M2.86 1.5 27 25.57 2 50.5' stroke='#009500' stroke-width='3')
+        +e.slider.swiper-container
+          .swiper-wrapper
+            +e.slide.swiper-slide
+              +e.A.link(href="/images/Aviacionnye_page-0001-724x1024.jpg" data-fancybox="sertif")
+                +e.IMG.pic(src="/images/Aviacionnye_page-0001-724x1024.jpg")
+            +e.slide.swiper-slide
+              +e.A.link(href="/images/Aviacionnye_page-0001-724x1024.jpg" data-fancybox="sertif")
+                +e.IMG.pic(src="/images/Aviacionnye_page-0001-724x1024.jpg")
+            +e.slide.swiper-slide
+              +e.A.link(href="/images/Aviacionnye_page-0001-724x1024.jpg" data-fancybox="sertif")
+                +e.IMG.pic(src="/images/Aviacionnye_page-0001-724x1024.jpg")
+            +e.slide.swiper-slide
+              +e.A.link(href="/images/Aviacionnye_page-0001-724x1024.jpg" data-fancybox="sertif")
+                +e.IMG.pic(src="/images/Aviacionnye_page-0001-724x1024.jpg")
+    +b.news
+      +e.inner.inner
+        +e.H1.title Статьи
+        +e.list
+          +e.A.link(href="#")
+            +e.IMG.pic(src='/images/media.jpg' alt='')
+            +e.P.caption Название статьи
+          +e.A.link(href="#")
+            +e.IMG.pic(src='/images/media.jpg' alt='')
+            +e.P.caption Название статьи
+          +e.A.link(href="#")
+            +e.IMG.pic(src='/images/media.jpg' alt='')
+            +e.P.caption Название статьи
+          +e.A.link(href="#")
+            +e.IMG.pic(src='/images/media.jpg' alt='')
+            +e.P.caption Название статьи
+          +e.A.link(href="#")
+            +e.IMG.pic(src='/images/media.jpg' alt='')
+            +e.P.caption Название статьи
+          +e.A.link(href="#")
+            +e.IMG.pic(src='/images/media.jpg' alt='')
+            +e.P.caption Название статьи
+      +b.contacts
+        +e.inner.inner
+          +e.H1.title Контакты
+          +e.top
+            +e.col
+              +e.P.caption Телефон
+              +e.A.cnt(href="tel:+7 (999) 915-11-11") +7 (999) 915-11-11
+            +e.col
+              +e.P.caption Email
+              +e.A.cnt(href="mailto:info@udobrenia.ru") info@udobrenia.ru
+            +e.col
+              +e.P.caption Адрес
+              +e.P.cnt Адрес
+          +e.map
+            +e.IMG.pic(src='/images/stub.jpg' alt='')
+    +footer()
+    include ../static/pug/_scripts

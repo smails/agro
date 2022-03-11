@@ -9,6 +9,8 @@
     max-width: 1200px
     position: relative
     z-index: 9
+    +screen('max', 1023)
+      margin-top: 0
   &__head
     padding: 4rem
     box-sizing: border-box
@@ -38,6 +40,9 @@
     max-width: 385px
     &_two
       column-count: 2
+      +screen('max', 575)
+        column-count: 1
+        width: 50%
   &__box
     width: 50%
     box-sizing: border-box
@@ -47,6 +52,12 @@
     transition: .5s ease
     background-repeat: no-repeat
     background-position: right bottom
+    min-height: 265px
+    +screen('max', 1023)
+      background-size: 80%
+    +screen('max', 575)
+      width: 100%
+      background-size: 70%
     &:nth-of-type(2n)
       border-right: 0
     &:hover
@@ -55,6 +66,8 @@
       flex-grow: 1
       border-bottom: 0
       border-right: 0
+      +screen('max', 575)
+        background-size: 100%
   &__item
     margin-bottom: 1.1rem
   &__caption
@@ -63,6 +76,9 @@
     +fs(14px)
     font-weight: 700
     color: $c3
+    transition: .5s ease
+    &:hover
+      color: $c2
 
 
 .catalog-list
@@ -73,12 +89,41 @@
     max-width: 382px
     width: 35%
     margin-right: 3rem
+    +screen('max', 1023)
+      width: 0
+      margin-right: 0
+      position: relative
   &__right
     max-width: 790px
     width: 65%
     flex-shrink: 0
+    +screen('max', 1023)
+      width: 100%
+  &__open-filter
+    width: 60px
+    height: 60px
+    background: #fff
+    position: relative
+    transition: .5s ease
+    border-radius: 100%
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .1)
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 5rem
+    +screen('max', 575)
+      margin-top: 38rem
+    +screen('min', 1024)
+      display: none
+  &__ic
+    width: 30px
   .vnt-big
     margin-bottom: 3rem
+    +screen('max', 1023)
+      padding-left: 15rem
+    +screen('max', 575)
+      padding-left: 0
+      padding-bottom: 15rem
   .product
     margin-bottom: 3rem
 
@@ -87,6 +132,16 @@
   background: #F2F2F2
   border-radius: 10px
   width: 100%
+  +screen('max', 1023)
+    position: absolute
+    top: 110px
+    width: 0
+    z-index: 9
+    overflow: hidden
+    transition: .5s ease
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .1)
+  +screen('max', 575)
+    top: 270px
   &__title
     padding: 2.7rem 1rem
     box-sizing: border-box
@@ -110,12 +165,20 @@
     +fs(11px)
     line-height: 1
     font-weight: 400
+    cursor: pointer
     svg
       width: 17px
+      transform: rotate(180deg)
+      transition: .5s ease
+    &.open
+      svg
+        transform: rotate(0deg)
   &__check
     margin-top: 2rem
     padding-left: 3rem
     box-sizing: border-box
+    &.hidden
+      display: none
     label
       display: block
       cursor: pointer
@@ -165,6 +228,8 @@
     margin-top: 2rem
     padding: 0 3rem
     box-sizing: border-box
+    &.hidden
+      display: none
     .ui-slider-horizontal
       height: 3px
       background: #BCBCBC
@@ -203,10 +268,20 @@
             text-align: right
 .consult
   margin-top: 6rem
+  +screen('max', 1023)
+    display: none
+  &_mobile
+    display: block
+    max-width: 70%
+    +screen('min', 1024)
+      display: none
+    +screen('max', 575)
+      max-width: 100%
   &__subtitle
     margin: 2rem 0
   &__phone-container
     position: relative
+    max-width: 360px
   &__contacts
     background: #FFFFFF
     box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.15)
@@ -220,14 +295,39 @@
     height: 100%
     box-sizing: border-box
     max-width: 280px
+    +screen('max', 1200)
+      width: 70%
+    +screen('max', 1023)
+      width: 75%
+    +screen('max', 575)
+      width: 73%
+  &__title
+    +screen('max', 1200)
+      +fs(30px)
   &__cnt-title
     font-weight: 400
     +fs(12px)
     margin-bottom: 1rem
-  &__cnt
+  &__field
     color: #464646
     font-weight: 600
     +fs(22px)
+    border: 0
+    box-sizing: border-box
+    border-bottom: 1px solid transparent
+    width: 210px
+    +screen('max', 1200)
+      +fs(16px)
+      width: 150px
+    +screen('max', 1023)
+      +fs(22px)
+      width: 210px
+    +screen('max', 575)
+      width: 160px
+    &::placeholder
+      color: #464646
+    &.error
+      border-bottom-color: red
   &__pic
     border-radius: 100%
     width: 126px
@@ -239,21 +339,47 @@
     display: flex
     align-items: center
     margin-top: 2rem
+    +screen('max', 1200)
+      flex-wrap: wrap-reverse
+    +screen('max', 1023)
+      flex-flow: nowrap
+    +screen('max', 575)
+      flex-wrap: wrap-reverse
   &__sign
     font-weight: 600
     font-size: 12px
     margin-right: 2rem
+    +screen('max', 1200)
+      margin-top: 2rem
+    +screen('max', 1023)
+      margin-top: 0
+    +screen('max', 575)
+      margin-top: 2rem
     a
       border-bottom: 1px solid #000
   &__btn
     flex-shrink: 0
     max-width: 215px
+    padding: 23px 30px 21px
+    +screen('max', 1200)
+      max-width: 100%
+      width: 100%
+    +screen('max', 1023)
+      max-width: 215px
+    +screen('max', 575)
+      max-width: 100%
 
 
 .vnt-big
   &__inner
     display: flex
     justify-content: space-between
+    +screen('max', 575)
+      flex-wrap: wrap
+  &__item
+    +screen('max', 575)
+      width: 50%
+      margin-bottom: 1rem
   &__pic
     margin-bottom: 1.5rem
     height: 41px

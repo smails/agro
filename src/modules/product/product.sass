@@ -5,9 +5,14 @@
   position: relative
   padding-right: 24.5%
   box-sizing: border-box
+  +screen('max', 575)
+    padding-right: 0
   &__figure
     display: flex
     border-bottom: 1px solid #EFF1E4
+    +screen('max', 575)
+      display: block
+      border-right: 0
   &__picture
     width: 240px
     height: 180px
@@ -16,12 +21,18 @@
     position: relative
     flex-shrink: 0
     box-shadow: 10px 14px 44px rgba(29, 185, 147, 0.1)
+    +screen('max', 575)
+      width: 100%
+      height: 300px
+      border-radius: 10px 10px 0px 0px
   &__pic
     vertical-align: middle
     object-fit: cover
     width: 100%
     height: 100%
     border-radius: 10px 0 0px 0px
+    +screen('max', 575)
+      border-radius: 10px 10px 0px 0px
   &__top
     position: absolute
     bottom: 0
@@ -36,32 +47,71 @@
     font-weight: 700
     font-size: 11px
   &__text
-    padding: 2.5rem 2rem
+    padding: 2.5rem 2rem 0
     box-sizing: border-box
     font-weight: 400
-    font-size: 11px
+    font-size: 13px
+    height: 157px
+    box-sizing: border-box
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: 8
+    -webkit-box-orient: vertical
+    overflow: hidden
+    margin-bottom: 2.5rem
+    +screen('max', 1023)
+      height: 153px
+    +screen('max', 575)
+      height: 145px
   &__main
     padding: 2rem
     display: flex
     justify-content: space-between
     align-items: center
+    +screen('max', 1200)
+      align-items: flex-end
+    +screen('max', 575)
+      display: block
+      padding-top: 0
+      position: relative
   &__title
     font-weight: 700
     +fs(18px)
+    +screen('max', 575)
+      margin-bottom: 2rem
   &__control
     margin-top: 0.5rem
     display: flex
     justify-content: space-between
     align-items: center
+    +screen('max', 1200)
+      display: block
+    +screen('max', 1023)
+      display: flex
+    +screen('max', 575)
+      max-width: 40%
+      display: block
   &__prices
     display: flex
     align-items: flex-end
+    +screen('max', 1200)
+      margin-bottom: 1rem
+    +screen('max', 575)
+      flex-flow: column-reverse
+      align-items: flex-start
+      justify-content: center
+      margin-bottom: 2rem
+  &__content
+    flex-grow: 1
+    margin-right: 2rem
   &__price-new
     font-weight: 700
     +fs(23px)
     margin-right: 2rem
     color: $c3
     line-height: 1
+    +screen('max', 575)
+      margin-right: 0
   &__price-old
     font-weight: 500
     color: #F22A52
@@ -76,6 +126,8 @@
       top: 50%
       z-index: 1
       transform: translateY(-50%) rotate(-10deg)
+    +screen('max', 575)
+      text-align: center
   &__info
     position: absolute
     right: 0
@@ -86,6 +138,13 @@
     box-sizing: border-box
     border-left: 1px solid #EFF1E4
     height: 100%
+    +screen('max', 575)
+      position: relative
+      width: 100%
+      max-width: 100%
+      height: auto
+      display: grid
+      grid-template-columns: 1fr 1fr
   &__item
     margin-bottom: 1rem
   &__caption
@@ -107,6 +166,16 @@
       path
         fill: #FF8803
         stroke: #FF8803
+  &__btn
+    flex-shrink: 0
+    +screen('max', 1200)
+      padding: 23px 20px 21px
+      flex-shrink: 0
+    +screen('max', 575)
+      position: absolute
+      bottom: 2rem
+      right: 2rem
+
 .product-min
   background: #FFFFFF
   box-shadow: 0px 0px 54px rgba(0, 0, 0, 0.09)
@@ -128,6 +197,8 @@
     position: relative
     flex-shrink: 0
     box-shadow: 10px 14px 44px rgba(29, 185, 147, 0.1)
+    +screen('max', 1200)
+      width: 50%
   &__pic
     vertical-align: middle
     object-fit: cover
@@ -165,6 +236,9 @@
     margin-bottom: 1.2rem
   &__content
     padding: 2.3rem 2rem
+    box-sizing: border-box
+    +screen('max', 1200)
+      padding: 2.3rem 1rem
   &__like
     position: absolute
     top: 20px
@@ -232,11 +306,19 @@
   &__content
     padding-right: 35%
     box-sizing: border-box
+    +screen('max', 1200)
+      padding-right: 0
   &__wrap
     display: flex
     justify-content: space-between
+    +screen('max', 1200)
+      justify-content: flex-start
+    +screen('max', 575)
+      display: block
   &__figure
     margin-right: 3rem
+    +screen('max', 575)
+      margin-right: 0
   &__picture
     width: 355px
     height: 265px
@@ -245,6 +327,8 @@
     flex-shrink: 0
     box-shadow: 0px 5px 44px rgba(29, 185, 147, 0.2)
     background: #fff
+    +screen('max', 1023)
+      width: 100%
   &__pic
     vertical-align: middle
     object-fit: cover
@@ -269,6 +353,10 @@
     display: flex
     width: 100%
     justify-content: space-between
+    max-width: 395px
+    +screen('max', 575)
+      height: 200px
+      margin-top: 5rem
   &__col-left
     width: 65%
     max-width: 215px
@@ -351,19 +439,34 @@
     line-height: 1.5
   &__btn
     width: 100%
+    +screen('max', 575)
+      margin-right: 3rem
   &__tabs
     margin-top: 4rem
     padding-top: 4rem
     border-top: 1px solid #EFF1E4
   &__tab-head
     display: flex
-    justify-content: space-between
+    +screen('max', 575)
+      display: block
   &__tab-btn
     +fs(20px)
     font-weight: 700
     color: #BCBCBC
     transition: .5s ease
     text-align: left
+    margin-right: 4.5%
+    &:last-of-type
+      margin-right: 0
+    +screen('max', 1200)
+      +fs(18px)
+    +screen('max', 1023)
+      width: 25%
+      margin-right: 0
+    +screen('max', 575)
+      width: 100%
+      text-align: center
+      margin-bottom: 1rem
     &.active
       color: #000
   &__tab-container
@@ -382,9 +485,22 @@
     right: 0
     max-width: 382px
     width: 33%
+    +screen('max', 1200)
+      width: 100%
+      max-width: 100%
+      position: relative
+      margin-top: 5rem
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+    +screen('max', 575)
+      display: block
   &__holder
     text-align: center
     margin-bottom: 2.5rem
+    +screen('max', 1200)
+      flex-grow: 1
+      width: 100%
   &__like
     font-weight: 600
     font-size: 11px
@@ -403,10 +519,44 @@
       path
         fill: #FF8803
         stroke: #FF8803
+  &__table
+    width: 100%
+    overflow: auto
+    scrollbar-width: none
+    &::-webkit-scrollbar
+      width: 0
+      height: 0
+    table
+      width: 100%
+      th, td
+        box-sizing: border-box
+        border: 1px solid #3b4357
+        text-align: left
+        +screen('max', 575)
+          min-width: 250px
+      td
+        padding: 10px 15px
+        +screen('max', 575)
+          padding: 5px 10px
+      th
+        padding: 15px
+        background: #009500
+        color: #fff
+        font-weight: 700
+        +screen('max', 575)
+          padding: 10px
   .vnt-big
     padding: 3.5rem 0
   .product-min
     margin-bottom: 2.5rem
+    +screen('max', 1200)
+      max-width: 30%
+    +screen('max', 1023)
+      max-width: 50%
+    +screen('max', 575)
+      max-width: 100%
+    &:nth-of-type(3)
+      display: none
 
 .similar
   background-image: url(../icon/bg-2.svg)

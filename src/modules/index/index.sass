@@ -11,13 +11,24 @@
     padding-top: 35rem
     background-image: url(../images/callback-1.png)
     margin-top: -26.5rem
+    +screen('max', 1200)
+      background-position-x: 50%
+    +screen('max', 575)
+      background-position-x: left
   &_2
     background-image: url(../images/callback-2.png)
+    +screen('max', 1200)
+      background-position-x: 50%
+    +screen('max', 575)
+      background-position-x: left
   &__title
     max-width: 500px
     margin-bottom: 2rem
   &__subtitle
     margin-bottom: 3rem
+    br
+      +screen('max', 575)
+        display: none
   &__info
     background: #FFFFFF
     box-shadow: 0px 24px 44px rgba(0, 0, 0, 0.15)
@@ -26,22 +37,36 @@
     padding: 2.7rem 4rem
     display: inline-flex
     align-items: center
+    +screen('max', 575)
+      display: block
   &__contacts
     margin-right: 5rem
+    +screen('max', 575)
+      margin-bottom: 3rem
   &__cnt-title
     font-weight: 400
     +fs(12px)
     margin-bottom: 1rem
-  &__cnt
+  &__field
     color: #464646
     font-weight: 600
     +fs(22px)
+    border: 0
+    box-sizing: border-box
+    border-bottom: 1px solid transparent
+    width: 210px
+    &::placeholder
+      color: #464646
+    &.error
+      border-bottom-color: red
   &__sign
     padding-left: 4rem
     margin-top: 1.5rem
     +fs(12px)
     font-weight: 600
     color: #fff
+    +screen('max', 575)
+      padding-left: 0
     a
       display: inline-block
       border-bottom: 1px solid #fff
@@ -60,6 +85,9 @@
     margin-top: 5.5rem
     justify-content: flex-end
     position: relative
+    +screen('max', 575)
+      display: block
+      margin-top: 3.5rem
     &::before
       content: ''
       width: 156px
@@ -71,6 +99,8 @@
       top: 0
       left: 0
       z-index: 2
+      +screen('max', 1200)
+        display: none
     &:after
       content: ''
       width: 244px
@@ -81,6 +111,10 @@
       top: 50%
       transform: translateY(-50%)
       border-radius: 100%
+      +screen('max', 1200)
+        left: 20%
+      +screen('max', 1023)
+        display: none
   &__content
     font-weight: 700
     +fs(23px)
@@ -89,9 +123,16 @@
     max-width: 480px
     position: relative
     z-index: 3
+    width: 50%
+    +screen('max', 575)
+      width: 100%
   &__sign
     line-height: 1.5
     max-width: 480px
+    width: 50%
+    +screen('max', 575)
+      width: 100%
+      margin-top: 3rem
 
 .brands
   padding: 5rem 0 4rem
@@ -104,12 +145,20 @@
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    +screen('max', 575)
+      justify-content: space-evenly
   &__item
     width: calc(100% / 7)
     margin-bottom: 4rem
     display: flex
     justify-content: center
     align-items: center
+    +screen('max', 1023)
+      width: calc(100% / 5)
+    +screen('max', 1023)
+      width: calc(100% / 3)
+      padding: 0 2rem
+      box-sizing: border-box
   &__icon
     width: 105px
     height: 65px
@@ -129,6 +178,8 @@
     +fs(24px)
     line-height: 1.8
     max-width: 840px
+    +screen('max', 1023)
+      +fs(20px)
   &__figure
     display: flex
     align-items: center
@@ -202,6 +253,117 @@
     height: 366px
     object-fit: contain
     margin-top: 3rem
+    +screen('max', 1200)
+      height: 270px
   & + .callback_2
     padding-top: 20rem
     margin-top: -9rem
+
+.sertif
+  padding: 4rem 0 7rem
+  &__head
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 5rem
+  &__title
+    max-width: 50%
+    line-height: 1.2
+  &__control
+    display: flex
+  &__slider
+    position: relative
+    z-index: 9
+  &__btn-control
+    cursor: pointer
+    &_next
+      margin-left: 4rem
+    svg
+      width: 25px
+  &__link
+    display: block
+    background: #F2F2F2
+    border-radius: 30px
+    box-sizing: border-box
+    text-align: center
+    padding: 2rem
+    box-sizing: border-box
+  &__pic
+    width: 100%
+    height: 350px
+    object-fit: contain
+
+.news
+  padding: 4rem 0 7rem
+  &__title
+    margin-bottom: 5rem
+  &__list
+    display: flex
+    flex-wrap: wrap
+  &__link
+    display: flex
+    margin-right: 1rem
+    margin-bottom: 1rem
+    width: calc(33% - .5rem)
+    display: block
+    padding: 3rem
+    background: #F2F2F2
+    box-sizing: border-box
+    +screen('max', 1023)
+      width: calc(50% - .5rem)
+    +screen('max', 575)
+      width: 100%
+      margin-right: 0
+    &:nth-of-type(3n)
+      margin-right: 0
+      +screen('max', 1023)
+        margin-right: 1rem
+      +screen('max', 575)
+        margin-right: 0
+    &:nth-of-type(2n)
+        +screen('max', 1023)
+          margin-right: 0
+  &__pic
+    width: 100%
+    height: 256px
+    object-fit: cover
+  &__caption
+    +fs(20px)
+    font-weight: 500
+    margin-top: 3rem
+
+.contacts
+  padding: 4rem 0 7rem
+  &__title
+    margin-bottom: 5rem
+  &__top
+    display: flex
+    +screen('max', 575)
+      display: block
+  &__col
+    margin-right: 5rem
+    +screen('max', 575)
+      margin-right: 0
+      margin-bottom: 3rem
+  &__caption
+    margin-bottom: 1rem
+    +fs(18px)
+  &__cnt
+    font-weight: 700
+    +fs(23px)
+    transition: .5s ease
+    line-height: 1
+    margin-bottom: 1rem
+    display: block
+    color: #464646
+    &[href]
+      &:hover
+        color: $c2
+  &__map
+    width: 100%
+    height: 400px
+    margin-top: 3rem
+  &__pic
+    width: 100%
+    height: 100%
+    object-fit: cover

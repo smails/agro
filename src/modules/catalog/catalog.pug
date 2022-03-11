@@ -78,6 +78,8 @@ mixin catalog(state)
         +e.H1.title Вспомогательные препараты
         +b.catalog-list
           +e.left
+            +e.BUTTON.open-filter
+              +e.IMG.ic(src='/icon/icon-filter.png' alt='')
             +b.filter
               +e.title Показан 
                 span 221
@@ -87,7 +89,8 @@ mixin catalog(state)
                   span Тип
                   svg(fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 10')
                     path(d='m1 1.26 7.37 7.4L16 1' stroke='#BCBCBC')
-                +e.body
+                +e.check.hidden
+                  p sjdhfhsdkjhfkj
             +b.consult
               +e.P.title.heading-2 Бесплатная консультация агронома
               +e.P.subtitle Наш специалист бесплатно проконсультирует, что выбрать конкретно под ваши цели
@@ -95,7 +98,7 @@ mixin catalog(state)
                 +e.IMG.pic(src='/images/consult-1.png' alt='')
                 +e.contacts
                   +e.P.cnt-title Телефон
-                  +e.A.cnt(href="tel:") +7 (495) 556-22-32
+                  +e.INPUT.field(type="tel" placeholder="Ваше имя")
               +e.control
                 +e.P.sign Оставляя заявку, Вы соглашаетесь с 
                   a(href="#")  политикой конфиденциальности
@@ -155,3 +158,15 @@ mixin catalog(state)
                         +e.INPUT.field(type="number" min="1" max="99" value="1")
                         +e.btn_plus
                   +e.BUTTON.btn.btn В корзину
+            +b.consult_mobile
+              +e.P.title.heading-2 Бесплатная консультация агронома
+              +e.P.subtitle Наш специалист бесплатно проконсультирует, что выбрать конкретно под ваши цели
+              +e.phone-container
+                +e.IMG.pic(src='/images/consult-1.png' alt='')
+                +e.contacts
+                  +e.P.cnt-title Телефон
+                  +e.INPUT.field(type="tel" placeholder="Ваше имя")
+              +e.control
+                +e.P.sign Оставляя заявку, Вы соглашаетесь с 
+                  a(href="#")  политикой конфиденциальности
+                +e.BUTTON.btn.btn.js-open-modal Заказать замер
